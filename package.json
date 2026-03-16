@@ -1,0 +1,30 @@
+{
+  "name": "dbzapi",
+  "version": "1.0.0",
+  "description": "My Dragon ball API built on node",
+  "main": "sever.js",
+  "scripts": {
+    "start": "nodemon badserver.js",
+    "adnan": "node badserver.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AAdnan-cbc/dbzAPI.git"
+  },
+  "keywords": [
+    "DBZ",
+    "NODE",
+    "LEARNING"
+  ],
+  "author": "adnan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AAdnan-cbc/dbzAPI/issues"
+  },
+  "homepage": "https://github.com/AAdnan-cbc/dbzAPI#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
