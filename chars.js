@@ -1,4 +1,4 @@
-export const charaters = {
+const charaters = {
   items: [
     {
       id: 1,
@@ -670,7 +670,12 @@ export const charaters = {
   },
 };
 
-export const names = {
+const names = {
   name: "adnan",
   age: "ewar",
-}
+};
+
+module.exports = {
+  charaters,
+  names,
+};

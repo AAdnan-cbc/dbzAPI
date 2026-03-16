@@ -1,9 +1,17 @@
 const express = require("express");
 const { charaters } = require("./chars");
-const { registrationValidation } = require("./valdiations/validations");
+const {
+  registrationValidation,
+  valdiateAddCharRequest,
+  valdiateGetCharRequest,
+} = require("./valdiations/validations");
 const {
   registrationController,
 } = require("./controllers/registration.controller");
+const {
+  addNewCharacterCtrl,
+} = require("./controllers/addNewCharacter.controller");
+const { getCharacterByNameCtrl } = require("./controllers/getCharacterByName.controller");
 
 const app = express();
 
@@ -30,6 +38,10 @@ app.post("/registration", registrationValidation, registrationController);
 
 // create an endpoint called /addNewCharacter
 // expects a json object
+
+app.post("/addNewCharacter", valdiateAddCharRequest, addNewCharacterCtrl);
+
+app.post("/getCharacterByName", valdiateGetCharRequest, getCharacterByNameCtrl);
 
 // validate if all the details are existing in the req.body
 // in controller -> take characters from our characters.

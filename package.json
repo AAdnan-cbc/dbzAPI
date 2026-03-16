@@ -5,7 +5,7 @@
   "main": "sever.js",
   "scripts": {
     "start": "nodemon badserver.js",
-    "expressServer": "nodemon server.js",
+    "es": "nodemon server.js",
     "adnan": "node badserver.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
