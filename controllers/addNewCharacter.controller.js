@@ -1,15 +1,22 @@
+const { characters } = require("../chars");
+const { defaultFilePath } = require("../constants/constants");
 const {
   addNewCharacterService,
 } = require("../service/addNewCharacter.service");
+const { writeJSON } = require("../utilities/json.util");
 
 const addNewCharacterCtrl = (req, res) => {
   const charactersRes = addNewCharacterService();
 
-  charactersRes.items.push(req.body);
+  const payload = req.body;
+
+  charactersRes.items.push(payload);
+
+  writeJSON(defaultFilePath, charactersRes);
 
   // get the req body
   // and add the new character to the characters OBJ/Arr
-  res.status(200).json(charactersRes);
+  res.status(200).json(characters);
 };
 
 module.exports = {

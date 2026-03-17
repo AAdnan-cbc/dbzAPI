@@ -1,7 +1,7 @@
-const { charaters } = require("../chars");
+const { characters } = require("../chars");
 
-const addNewCharacterService = (reqBody) => {
-  return charaters;
+const addNewCharacterService = () => {
+  return characters;
 };
 
 module.exports = {

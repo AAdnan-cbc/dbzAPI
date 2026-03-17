@@ -1,5 +1,5 @@
 const express = require("express");
-const { charaters } = require("./chars");
+const { characters } = require("./chars");
 const {
   registrationValidation,
   valdiateAddCharRequest,
@@ -11,14 +11,11 @@ const {
 const {
   addNewCharacterCtrl,
 } = require("./controllers/addNewCharacter.controller");
-const { getCharacterByNameCtrl } = require("./controllers/getCharacterByName.controller");
+const {
+  getCharacterByNameCtrl,
+} = require("./controllers/getCharacterByName.controller");
 
 const app = express();
-
-// {
-//     "username": "Adnan",
-//     "password": "noPassword"
-// }
 
 // Read the incoming JSON
 // parses it JS Object
@@ -31,7 +28,7 @@ app.get("/getCharacters", (req, res) => {
   console.log("req: ", req.body);
 
   //   res.status(200);
-  res.status(201).json(charaters);
+  res.status(201).json(characters);
 });
 
 app.post("/registration", registrationValidation, registrationController);

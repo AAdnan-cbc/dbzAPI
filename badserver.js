@@ -13,7 +13,7 @@ const { charaters } = require("./chars");
 // http://localhost:8000
 const server = https.createServer((req, res) => {
   if (req.url === "/getCharacters") {
-    const characterJSON = JSON.stringify(charaters); // converts Object into JSON String
+    const characterJSON = JSON.stringify(charaters); // converts JS Object into JSON String
     // console.log(object)
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(characterJSON);

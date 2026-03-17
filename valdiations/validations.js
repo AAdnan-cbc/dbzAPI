@@ -1,4 +1,9 @@
+const { validateMissingFields } = require("../utilities/utils");
+
 const registrationValidation = (req, res, next) => {
+
+  
+
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -13,34 +18,28 @@ const registrationValidation = (req, res, next) => {
 };
 
 const valdiateAddCharRequest = (req, res, next) => {
-  const {
-    id,
-    name,
-    ki,
-    maxKi,
-    race,
-    gender,
-    description,
-    image,
-    affiliation,
-    deletedAt,
-  } = req.body;
+  const requiredFields = [
+    "id",
+    "name",
+    "ki",
+    "maxKi",
+    "race",
+    "gender",
+    "description",
+    "image",
+    "affiliation",
+    "deletedAt",
+  ];
 
-  if (
-    (!id, // true
-    !name,
-    !ki,
-    !maxKi,
-    !race,
-    !gender,
-    !description,
-    !image,
-    !affiliation,
-    !deletedAt)
-  ) {
+  const missingFields = validateMissingFields(requiredFields, req.body);
+
+  if (missingFields) {
     res.status(400).json({
       code: "9999",
-      message: "Missing required fields",
+      message: `Missing required fields.`,
+      details: {
+        missingFields,
+      },
     });
     return;
   }
